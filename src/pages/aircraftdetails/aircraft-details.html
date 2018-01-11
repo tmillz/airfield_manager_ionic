@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{item.name}} Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-item no-lines>
+  <div class="center" style="max-width:400px">
+  <div class="row">
+     <div class="col">Wingspan:</div>
+     <div class="col">{{item.wing_span}}</div>
+     <div class="col">Length:</div>
+     <div class="col">{{item.length}}</div>
+  </div>
+  <div class="row">
+     <div class="col">Height:</div>
+     <div class="col">{{item.height}}</div>
+     <div class="col">Vertical Clear:</div>
+     <div class="col">{{item.vert_clr}}</div>
+  </div>
+  <div class="row">
+     <div class="col">Max T/O Wt:</div>
+     <div class="col">{{item.max_to_wt}}</div>
+     <div class="col">Basic Empt Wt:</div>
+     <div class="col">{{item.basic_empty_wt}}</div>
+  </div>
+  <div class="row">
+     <div class="col">Turning Radius:</div>
+     <div class="col">{{item.turn_radius}}</div>
+     <div class="col">180 Trn Diam:</div>
+     <div class="col">{{item.turn_diameter}}</div>
+  </div>
+  <div text-center>
+  <div class="greyDiv">ACN</div>
+  <div class="greyDiv">Rigid Pavement Subgrade</div>
+  </div>
+  <div class="row">
+     <div class="col"></div>
+     <div class="col">High</div>
+     <div class="col">Med</div>
+     <div class="col">Low</div>
+     <div class="col">Ultra Low</div>
+  </div>
+  <div class="row">
+     <div class="col">Weight</div>
+     <div class="col">A</div>
+     <div class="col">B</div>
+     <div class="col">C</div>
+     <div class="col">D</div>
+  </div>
+  <div class="row">
+     <div class="col">{{item.max_to_wt}}</div>
+     <div class="col">{{item.max_rigid_a}}</div>
+     <div class="col">{{item.max_rigid_b}}</div>
+     <div class="col">{{item.max_rigid_c}}</div>
+     <div class="col">{{item.max_rigid_d}}</div>
+  </div>
+  <div class="row">
+     <div class="col">{{item.acn_weight_min}}</div>
+     <div class="col">{{item.rigid_a}}</div>
+     <div class="col">{{item.rigid_b}}</div>
+     <div class="col">{{item.rigid_c}}</div>
+     <div class="col">{{item.rigid_d}}</div>
+  </div>
+  <div text-center>
+  <div class="greyDiv">flexible Pavement Subgrade</div>
+  </div>
+  <div class="row">
+     <div class="col"></div>
+     <div class="col">High</div>
+     <div class="col">Med</div>
+     <div class="col">Low</div>
+     <div class="col">Ultra Low</div>
+  </div>
+  <div class="row">
+     <div class="col">Weight</div>
+     <div class="col">A</div>
+     <div class="col">B</div>
+     <div class="col">C</div>
+     <div class="col">D</div>
+  </div>
+  <div class="row">
+     <div class="col">{{item.max_to_wt}}</div>
+     <div class="col">{{item.max_flex_a}}</div>
+     <div class="col">{{item.max_flex_b}}</div>
+     <div class="col">{{item.max_flex_c}}</div>
+     <div class="col">{{item.max_flex_d}}</div>
+  </div>
+  <div class="row">
+     <div class="col">{{item.acn_weight_min}}</div>
+     <div class="col">{{item.flex_a}}</div>
+     <div class="col">{{item.flex_b}}</div>
+     <div class="col">{{item.flex_c}}</div>
+     <div class="col">{{item.flex_d}}</div>
+  </div>
+</div>  
+</ion-item>
+</ion-content>

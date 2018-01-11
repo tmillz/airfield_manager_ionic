@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar [class.show-background]="showToolbar">
+    <button ion-button menuToggle color="dark">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Regulations</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon name='document' item-left></ion-icon>
+      {{item.title}}
+    </button>
+
+  </ion-list>
+
+</ion-content>

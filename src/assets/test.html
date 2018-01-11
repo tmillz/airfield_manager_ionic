@@ -1,0 +1,641 @@
+<html>
+  <head>
+    <title>Airfield Inspection Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script> var formHtml = "<br><input type='text' name='inp' style='width:100%'>";
+        function AddElement() {
+          document.getElementById('comments').innerHTML += formHtml;
+        }
+    </script>
+  </head>
+
+  <style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+    .padtop {
+      padding-top: 18px;
+    }
+  </style>
+    
+  <body>
+    <div class="container-fluid">
+        <!--p>Sample Airfield Inspection Form to have yours take this place email it to terrymil1981@gmail.com</p-->
+        <div class="form-group padtop">
+          <label for="Date">Date:</label>
+          <input id="date" type="date" name="date"/>
+        </div>
+        <div class="form-group">
+          <label for="TimeOut">Time Out:</label>
+          <input id="timeOut" type="time" name="timeOut"/>
+        </div>
+        <div class="form-group">
+            <label for="TimeIn">Time In:</label>
+            <input id="timeIn" type="time" name="timeIn"/>
+        </div>
+        <div class="form-group">
+          <label for="Inspector">Inspector:</label>
+          <input id="inspector" type="text" name="inspector" placeholder="Inspector..."/>
+        </div>
+        <div class="col-lg-4">
+          <table style="width:100%">
+          <th colspan="2">
+          1. OBSTACLE CLEARANCE CRITERIA  (e.g. tree growth vegetation, dirt/snow piles, ponding, construction, depressions, mobile/fixed obstacles, etc.)
+          </th>
+          <tr>
+          <td style="min-width:125px">
+          <label class="radio-inline">
+            <input type="radio" id="rwyClrZone" name="rwyClrZone" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="rwyclrZone" name="rwyClrZone" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          a. RWY CLEAR ZONES 3000X3000 FT
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="rwyLatClrnc" name="rwyLatClrnc" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="rwyLatClrnc" name="rwyLatClrnc" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          b. RWY LAT CLEARANCE 1000 FT
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="twyLatClrnc" name="twyLatClrnc" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="twyLatClrnc" name="twyLatClrnc" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          c. TWY LAT CLEARANCE 200 FT CENTERLINE
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="aprnLatClrnc" name="aprnLatClrnc" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="aprnLatClrnc" name="aprnLatClrnc" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          d. APRON LAT CLEARANCE VARIABLE
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="aprnLatClrnc200" name="aprnLatClrnc200" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="aprnLatClrnc200" name="aprnLatClrnc200" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          e. APRON LAT CLEARANCE 200 FT CENTERLINE
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="constAreas" name="constAreas" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="constAreas" name="constAreas" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          f. CONSTRUCTIN AREAS
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="transSlope" name="transSlope" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="transSlope" name="transSlope" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          g. TRANSITION SLOPE (7:1)
+          </td>
+          </tr>
+          <th colspan="2">
+          2. FOD Control
+          </th>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="fodRwyTwy" name="fodRwyTwy" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="fodRwyTwy" name="fodRwyTwy" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          a. Runways/Overruns, Taxiways/Shoulders
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="fodAprns" name="fodAprns" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="fodAprns" name="fodAprns" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          b. Parking Aprons
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="fodInfield" name="fodInfield" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="fodInfield" name="fodInfield" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          c. Infield areas between Runways/Taxiways
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="fodRoads" name="fodRoads" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="fodRoads" name="fodRoads" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          d. Perimeter/Access Roads
+          </td>
+          </tr>
+          </table>
+        </div>
+        <div class="col-lg-4">
+          <table style="width:100%">
+          <th colspan="2">
+          3. SIGNS  (e.g. broken, missing, correct background and legend colors, easy to read, not obscured by vegetation, dirt or snow, frangible mounted and illuminated if required for night operations, etc.)					  </th>
+          </th>
+          <tr>
+          <td style="min-width:125px">
+          <label class="radio-inline">
+            <input type="radio" id="signsVfrHold" name="signsVfrHold" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="signsVfrHold" name="signsVfrHold" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          a. VFR HOLDING POSITIONS
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="signsInstHold" name="signsInstHold" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="signsInstHold" name="signsInstHold" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          b. INSTRUMENT HOLDING POSITIONS
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="signsElevation" name="signsElevation" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="signsElevation" name="signsElevation" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          c. ELEVATION SIGNS
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="signsNavaidChckpt" name="signsNavaidChckpt" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="signsNavaidChckpt" name="signsNavaidChckpt" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          d. NAVAID GROUND RECEIVER CHECKPOINT
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="signsClosedAreas" name="signsClosedAreas" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="signsClosedAreas" name="signsClosedAreas" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          e. CLOSED AREAS
+          </td>
+          </tr>
+          <th colspan="2">
+          4. RWY/TWY/APRON SHOULDERS
+          </th>
+          </th>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="shouldersRwy" name="shouldersRwy" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="shouldersRwy" name="shouldersRwy" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          a. RWY 200 FT
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="shouldersTwy" name="shouldersTwy" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="shouldersTwy" name="shouldersTwy" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          b. TWY 50 FT
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="shouldersAprn" name="shouldersAprn" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="shouldersAprn" name="shouldersAprn" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          c. APRON 50 FT
+          </td>
+          </tr>
+          <th colspan="2">
+          5. CONSTRUCTION
+          </th>
+          </th>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="constParking" name="constParking" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="constParking" name="constParking" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          a. PARKING
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="constRules" name="constRules" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="constRules" name="constRules" value="good">Bad
+          </label>
+          </td>
+          <td>
+          b. RULES COMPLIANCE
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="constLighting" name="constLighting" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="constLighting" name="constLighting" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          c. SITE LIGHTING/MARKING
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="constStorage" name="constStorage" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="constStorage" name="constStorage" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          d. STORAGE
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="constVehicles" name="constVehicles" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="constVehicles" name="constVehicles" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          e. VEHICLES LIGHTED/MARKED
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="constFod" name="constFod" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="constFod" name="constFod" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          f. FOD CONTROL
+          </td>
+          </tr>
+        </table>
+        </div>
+        <div class="col-lg-4">
+          <table style="width:100%">
+          <th colspan="2">
+          6. PAVEMENT CONDITIONS  (e.g. scaling, spalling, cracks, holes, surface variations such as bumps/low spots, rubber deposits and vegetation growth, etc.)
+          </th>
+           <tr>
+            <td style="min-width:125px">
+              <label class="radio-inline">
+                <input type="radio" id="paveRwy" name="paveRwy" value="good">Good
+              </label>
+              <label class="radio-inline">
+                <input type="radio" id="paveRwy" name="paveRwy" value="bad">Bad
+              </label>
+            </td>
+            <td>
+              a. RUNWAY/OVERRUNS
+            </td>
+           </tr>
+           <tr>
+           <td>
+           <label class="radio-inline">
+            <input type="radio" id="paveTwy" name="paveTwy" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="paveTwy" name="paveTwy" value="bad">Bad
+          </label>
+           </td>
+           <td>
+           b. TAXIWAYS
+           </td>
+           </tr>
+           <tr>
+           <td>
+           <label class="radio-inline">
+            <input type="radio" id="paveAprns" name="paveAprns" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="paveAprns" name="paveAprns" value="bad">Bad
+          </label>
+           </td>
+           <td>
+           c. PARKING APRONS
+           </td>
+           </tr>
+           <tr>
+           <td>
+           <label class="radio-inline">
+            <input type="radio" id="paveRoads" name="paveRoads" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="paveRoads" name="paveRoads" value="bad">Bad
+          </label>
+           <td>
+           d. ACCESS ROADS
+           </td>
+           </tr>
+           <th colspan="2">
+          7. HABITAT MANAGEMENT
+          </th>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="habitatGrass" name="habitatGrass" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="habitatGrass" name="habitatGrass" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          a. GRASS HEIGHT
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="habitatPonding" name="habitatPonding" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="habitatPonding" name="habitatPonding" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          b. PONING EFFECTS
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="habitatAnimalSurvey" name="habitatAnimalSurvey" value="good">Good
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="habitatAnimalSurvey" name="habitatAnimalSurvey" value="bad">Bad
+          </label>
+          </td>
+          <td>
+          c. BIRD/ANIMAL SURVEY
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <label class="radio-inline">
+            <input type="radio" id="bwc" name="bwc" value="low">LOW
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="bwc" name="bwc" value="mod">MOD
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="bwc" name="bwc" value="sev">SEV
+          </label>
+          </td>
+          <td>
+          d. BASH CONDITION
+          </td>
+          </tr>
+          <tr>
+          <th colspan="2">
+            <div class="form-group" id="comments">
+            <label for="Comment">Comment:</label>
+            <input type="text" id="comment" name="comment" style="width:100%" />
+            </div>
+          <button onclick="AddElement();">Add
+          </th>
+          </tr>
+          </table>
+        </div>
+      <div class="padtop" align="center">
+        <button id="submit">Submit</button>
+      </div>
+    </div>
+  </body>
+
+  <!--Include firebase.js  -->
+  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>       
+
+  <!--Configure firebase-->
+  <script>
+    var config = {
+        apiKey: "AIzaSyCkaHTUzgjGFh703B9JOcnwEXempkRSjKk",
+        authDomain: "airfield-manager.firebaseapp.com",
+        databaseURL: "https://airfield-manager.firebaseio.com",
+        projectId: "airfield-manager",
+        storageBucket: "airfield-manager.appspot.com",
+        messagingSenderId: "694415063502"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <!--Handle auth events-->
+  <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+      window.user = user;
+    });
+  </script>
+  
+  <!--Handle page events-->
+  <script>
+    document.querySelector('#submit').addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var database = firebase.database();
+      var date = document.querySelector('#date').value
+      var timeOut =  document.querySelector('#timeOut').value
+      var timeIn = document.querySelector('#timeIn').value
+      var inspector = document.querySelector('#inspector').value
+      var rwyClrZone = document.querySelector('input[name="rwyClrZone"]:checked').value
+      var rwyLatClrnc = document.querySelector('input[name="rwyLatClrnc"]:checked').value
+      var twyLatClrnc = document.querySelector('input[name="twyLatClrnc"]:checked').value
+      var aprnLatClrnc = document.querySelector('input[name="aprnLatClrnc"]:checked').value
+      var aprnLatClrnc200 = document.querySelector('input[name="aprnLatClrnc200"]:checked').value
+      var constAreas = document.querySelector('input[name="constAreas"]:checked').value
+      var transSlope = document.querySelector('input[name="transSlope"]:checked').value
+      var fodRwyTwy = document.querySelector('input[name="fodRwyTwy"]:checked').value
+      var fodAprns = document.querySelector('input[name="fodAprns"]:checked').value
+      var fodInfield = document.querySelector('input[name="fodInfield"]:checked').value
+      var fodRoads = document.querySelector('input[name="fodRoads"]:checked').value
+      var singsVfrHold = document.querySelector('input[name="signsVfrHold"]:checked').value
+      var signsInstHold = document.querySelector('input[name="signsInstHold"]:checked').value
+      var signsElevation = document.querySelector('input[name="signsElevation"]:checked').value
+      var signsNavaidChckpt = document.querySelector('input[name="signsNavaidChckpt"]:checked').value
+      var signsClosedAreas = document.querySelector('input[name="signsClosedAreas"]:checked').value
+      var shouldersRwy = document.querySelector('input[name="shouldersRwy"]:checked').value
+      var shouldersTwy = document.querySelector('input[name="shouldersTwy"]:checked').value
+      var shouldersAprn = document.querySelector('input[name="shouldersAprn"]:checked').value
+      var constParking = document.querySelector('input[name="constParking"]:checked').value
+      var constRules = document.querySelector('input[name="constRules"]:checked').value
+      var constLighting = document.querySelector('input[name="constLighting"]:checked').value
+      var constStorage = document.querySelector('input[name="constStorage"]:checked').value
+      var constVehicles = document.querySelector('input[name="constVehicles"]:checked').value
+      var constFod = document.querySelector('input[name="constFod"]:checked').value
+      var paveRwy = document.querySelector('input[name="paveRwy"]:checked').value
+      var paveTwy = document.querySelector('input[name="paveTwy"]:checked').value
+      var paveAprns = document.querySelector('input[name="paveAprns"]:checked').value
+      var paveRoads = document.querySelector('input[name="paveRoads"]:checked').value
+      var habitatGrass = document.querySelector('input[name="habitatGrass"]:checked').value
+      var habitatPonding = document.querySelector('input[name="habitatPonding"]:checked').value
+      var habitatAnimalSurvey = document.querySelector('input[name="habitatAnimalSurvey"]:checked').value
+      var bwc = document.querySelector('input[name="bwc"]:checked').value
+      var comment = document.querySelector('#comment').value
+      firebase.database().ref('inspections/'+ user.uid).push({
+          date: date,
+          timeout: timeOut,
+          timein: timeIn,
+          inspector: inspector,
+          rwyClrZone: rwyClrZone,
+          rwyLatClrnc: rwyLatClrnc,
+          twyLatClrnc: twyLatClrnc,
+          aprnLatClrnc: aprnLatClrnc,
+          aprnLatClrnc200: aprnLatClrnc200,
+          constAreas: constAreas,
+          transSlope: transSlope,
+          fodRwyTwy: fodRwyTwy,
+          fodAprns: fodAprns,
+          fodInfield: fodInfield,
+          fodRoads: fodRoads,
+          singsVfrHold: singsVfrHold,
+          signsInstHold: signsInstHold,
+          signsElevation: signsElevation,
+          signsNavaidChckpt: signsNavaidChckpt,
+          signsClosedAreas: signsNavaidChckpt,
+          signsClosedAreas: signsClosedAreas,
+          shouldersRwy: shouldersRwy,
+          shouldersTwy: shouldersTwy,
+          shouldersAprn: shouldersAprn,
+          constParking: constParking,
+          constRules: constRules,
+          constLighting: constLighting,
+          constStorage: constStorage,
+          constVehicles: constVehicles,
+          constFod: constFod,
+          paveRwy: paveRwy,
+          paveTwy: paveTwy,
+          paveAprns: paveAprns,
+          paveRwy: paveRoads,
+          habitatGrass: habitatGrass,
+          habitatPonding: habitatPonding,
+          habitatAnimalSurvey: habitatAnimalSurvey,
+          bwc: bwc,
+          comment: comment
+      })
+    });
+  </script>
+
+</html>

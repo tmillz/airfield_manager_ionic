@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Aircraft</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item item-start *ngFor="let item of items" (click)="itemTapped($event, item)">
+      {{item.name}}
+      <ion-note>
+        Wingspan: {{item.wing_span}} ft       
+      </ion-note>
+      <br>
+      <ion-note>
+        ½ Wingspan: {{item.wing_span/2}} ft       
+      </ion-note>
+      <ion-note item-end>
+        Length:{{item.length}} ft
+      </ion-note>
+    </button>
+  </ion-list>
+</ion-content>

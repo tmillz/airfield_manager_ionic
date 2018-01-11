@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Map</ion-title>
+
+    <ion-buttons end>
+    <button ion-button icon-only clear (click)="addMarker()">
+      <ion-icon item-right name="md-pin"></ion-icon>
+    </button>
+
+    <!--button ion-button icon-only clear (click)="deleteMarkers()">
+      <ion-icon item-right name="md-pin"></ion-icon>
+    </button-->
+
+    <button *ngIf="!showRule" ion-button icon-only clear (click)="showRuler()"> <ion-icon name="ios-barcode"></ion-icon></button>
+    <button *ngIf="showRule" ion-button icon-only clear color="dark" (click)="showRuler()"> <ion-icon name="ios-barcode"></ion-icon></button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="map">
+  <div div style="height:100%" #map id="map"></div>
+</ion-content>

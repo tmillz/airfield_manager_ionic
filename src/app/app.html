@@ -1,0 +1,93 @@
+<ion-split-pane>
+<ion-menu [content]="content">
+  <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+  <!--ion-refresher (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content></ion-refresher-content>
+  </ion-refresher-->
+    <ion-list no-lines>
+      <!--button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <ion-icon [name]="p.icon" item-left></ion-icon>
+        {{p.title}}
+      </button-->
+
+      <!--button menuClose ion-item page="SignInPage" (click)="openPage(page)"-->
+      <button menuClose *ngIf="!signin" ion-item (click)="signIn()">
+        <ion-icon name="log-in" item-left></ion-icon>
+          Sign In
+      </button>
+
+      <button menuClose *ngIf="signin" ion-item (click)="signIn()">
+        <ion-icon name="log-out" item-left></ion-icon>
+          Sign Out
+      </button>
+
+      <button menuClose ion-item (click)="openHomePage()">
+        <ion-icon name="md-home" item-left></ion-icon>
+          Home
+      </button>
+
+      <button menuClose ion-item (click)="openRegulationsPage()">
+      <ion-icon name="document" item-left></ion-icon>
+        Regulations
+      </button>
+
+      <button menuClose ion-item (click)="openAircraftPage()">
+      <ion-icon name="jet" item-left></ion-icon>
+        Aircraft
+      </button>
+
+      <button menuClose ion-item (click)="openSurfCalcPage()">
+      <ion-icon name="calculator" item-left></ion-icon>
+        Surface Calculators
+      </button>
+
+      <button menuClose ion-item onclick="window.open('https://www.notams.faa.gov/dinsQueryWeb/', '_blank')">
+      <ion-icon name="warning" item-left></ion-icon>
+        NOTAMs
+      </button>
+
+      <button menuClose ion-item (click)="openBowCalcPage()">
+      <ion-icon name="calculator" item-left></ion-icon>
+        Bowmonk Calculators
+      </button>
+
+      <button menuClose ion-item (click)="openLinksPage()">
+      <ion-icon name="ios-link" item-left></ion-icon>
+        Links
+      </button>
+
+      <button menuClose ion-item (click)="openMapPage()">
+      <ion-icon name="map" item-left></ion-icon>
+        Map
+      </button>
+
+      <button menuClose ion-item (click)="openFormsPage()">
+      <ion-icon name="checkbox" item-left></ion-icon>
+        Forms
+      </button>
+
+      <button menuClose ion-item onclick="window.open('https://play.google.com/store/apps/details?id=com.tmillz.airfieldmanagement&hl=en', '_blank')">
+      <ion-icon name="thumbs-up" item-left></ion-icon>
+        Rate App
+      </button>
+
+      <button menuClose ion-item onclick="window.open('mailto:terrymil1981@gmail.com')">
+      
+      <ion-icon name="mail" item-left></ion-icon>
+        Email Developer
+      </button>
+
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false" main></ion-nav>
+</ion-split-pane>

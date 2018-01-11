@@ -1,0 +1,8 @@
+{
+  "name": "airfieldmanager",
+  "app_id": "bea36f57",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

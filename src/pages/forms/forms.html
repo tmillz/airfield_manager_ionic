@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Forms</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+  <div class="center" style="max-width:400px">
+    <button ion-button color="light" full onclick="window.open('http://static.e-publishing.af.mil/production/1/af_a4/form/af332/af332.pdf', '_system', 'location=yes')">AF 332</button>
+    <button ion-button color="light" full onclick="window.open('http://static.e-publishing.af.mil/production/1/af_a4/form/af332/af332.pdf', '_system', 'location=yes')">DD Form 175</button>
+    <button ion-button color="light" full [navPush]="afldinspPage">Airfield Inspection</button>
+  </div>
+</ion-content>
