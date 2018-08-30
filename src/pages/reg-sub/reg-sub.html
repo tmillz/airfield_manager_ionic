@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{item.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let content of item['contents']" (click)="goToPage($event, content.link)" >
+        <ion-icon name='document' item-left></ion-icon>
+        {{content.title}}
+      </button>
+    </ion-list>
+</ion-content>

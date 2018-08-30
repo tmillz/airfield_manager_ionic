@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, IonicPage, IonicPageModule } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, Loading, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { RegisterPage } from '../register/register';
 import { GooglePlus } from '@ionic-native/google-plus';
-import { AngularFireModule } from 'angularfire2';
 import firebase from 'firebase';
-import { NgModel } from '@angular/forms/src/directives/ng_model';
-import { NgModule } from '@angular/core/src/metadata/ng_module';
+import { AuthProvider } from '../../providers/auth/auth';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { IonicPage } from 'ionic-angular/navigation/ionic-page';
 
-//@IonicPage()
+@IonicPage()
 
 @Component({
   selector: 'page-signin',
@@ -21,10 +21,19 @@ export class SignInPage {
   registerPage = RegisterPage;
   public type = 'password';
   public showPass = false;
+  loading: Loading;
+  loginForm: FormGroup;
 
-  constructor(private firebase: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams, public googleplus: GooglePlus) {
+  constructor(private firebase: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams, public googleplus: GooglePlus,
+              public authData: AuthProvider, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public formBuilder: FormBuilder) {
      this.email;
      this.password;
+
+     this.loginForm = formBuilder.group({
+      email: [''],
+      password: ['']
+    });
+
   }
 
   showPassword() {
@@ -37,13 +46,15 @@ export class SignInPage {
     }
   }
 
-  registerUser() {
+  /*signInUser() {
     this.firebase.auth.signInWithEmailAndPassword(this.email, this.password)
     .then(data => {
        console.log('got data ', data + 'success!');
        alert("Sign In Successful")
        this.email = "";
        this.password = "";
+    }).then( firebase =>{
+      this.navCtrl.setRoot(HomePage);
     })
     .catch(error => {
       console.log('got an error ', error);
@@ -52,6 +63,40 @@ export class SignInPage {
       this.password = "";
     });
     console.log('Would register user with ', this.email, this.password);
+
+    this.loading = this.loadingCtrl.create({
+      dismissOnPageChange: true,
+    });
+    this.loading.present();
+  }*/
+
+  loginUser(){
+    //if (!this.loginForm.valid){
+    //  console.log(this.loginForm.value);
+    //} else {
+      this.authData.loginUser(this.loginForm.value.email, this.loginForm.value.password)
+      .then( authData => {
+        this.navCtrl.setRoot('HomePage');
+      }, error => {
+        this.loading.dismiss().then( () => {
+          let alert = this.alertCtrl.create({
+            message: error.message,
+            buttons: [
+              {
+                text: "Ok",
+                role: 'cancel'
+              }
+            ]
+          });
+          alert.present();
+        });
+      });
+  
+      this.loading = this.loadingCtrl.create({
+        dismissOnPageChange: true,
+      });
+      this.loading.present();
+    //}
   }
 
   loginGUser() {
@@ -67,5 +112,9 @@ export class SignInPage {
           alert("Not Successful")
         })
     })
+  }
+
+  openRegPage(){
+    this.navCtrl.push('RegisterPage');
   }
 }

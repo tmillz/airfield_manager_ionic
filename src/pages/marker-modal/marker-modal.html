@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button clear (click)="cancelModal()">Cancel</button>
+    </ion-buttons>
+    <ion-title>Marker Details</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Save</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+      <ion-label floating>Title:</ion-label>
+      <ion-input type="text" [(ngModel)]="location.title"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Lat:</ion-label>
+      <ion-input type="text" [(ngModel)]="location.lat"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Lng:</ion-label>
+      <ion-input type="text" [(ngModel)]="location.lng"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Date:</ion-label>
+      <ion-input type="date" [(ngModel)]="location.date"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>ID'd By</ion-label>
+      <ion-input type="text" [(ngModel)]="location.id_by"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Notes:</ion-label>
+      <ion-input type="text" [(ngModel)]="location.notes"></ion-input>
+  </ion-item>
+  <ion-item>
+    <img class="center" *ngIf="img" [src]="img">
+  </ion-item>
+  <ion-item>
+    <label>{{label}}</label>
+    <input type="file" (change)="changeListener($event)" id="file-input" style="opacity: 0" #fileInp>
+    <button ion-button block (click)="onClick()">Select Image</button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Type</ion-label>
+    <ion-select [(ngModel)]="location.type">
+      <ion-option value="construction.png">Construction</ion-option>
+      <ion-option value="discrepancy.png">Discrepancy</ion-option>
+      <ion-option value="ponding.png">Ponding</ion-option>
+      <ion-option value="lighting_outage.png">Lighting Outage</ion-option>
+      <ion-option value="fod.png">FOD</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Date Closed:</ion-label>
+    <ion-input type="date" [(ngModel)]="location.dateClosed"></ion-input>
+</ion-item>
+</ion-content>

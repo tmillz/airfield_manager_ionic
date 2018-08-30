@@ -6,7 +6,7 @@
     <ion-title>Airfield Inpsection Form</ion-title>
   
     <ion-buttons end>
-      <button ion-button icon-only clear (click)="addMarker()">
+      <button ion-button icon-only clear (click)="openInspList()">
         <ion-icon item-right name="md-list"></ion-icon>
       </button>
     </ion-buttons>
@@ -15,5 +15,7 @@
 </ion-header>
 
 <ion-content>
-  <iframe width='100%' height='100%' border='none' frameBorder='0' src='assets/test.html'></iframe>
+  <!--iframe width='100%' height='100%' border='none' frameBorder='0' src='assets/test.html'></iframe-->
+  <iframe width='100%' height='100%' border='none' frameBorder='0' [src]='inspectionForm'></iframe>
+  <!--iframe width="100%" height="100%" border="none" frameBorder="0" src="https://firebasestorage.googleapis.com/v0/b/airfield-manager.appspot.com/o/users%2FokwVGpqntaS2qjdd9GdH8u748Zp2%2Ftest.html?alt=media&token=9e2ec6ec-a5f6-4647-b0cd-f65322721f29"></iframe-->
 </ion-content>

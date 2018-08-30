@@ -25,6 +25,15 @@
     .padtop {
       padding-top: 18px;
     }
+
+    @media print {
+      #divname {
+          left: 0px;
+          top: 0px;
+          position:absolute;
+      }
+    }
+
   </style>
     
   <body>
@@ -522,7 +531,7 @@
           </table>
         </div>
       <div class="padtop" align="center">
-        <button id="submit">Submit</button>
+        <button id="submit">Save</button>
       </div>
     </div>
   </body>

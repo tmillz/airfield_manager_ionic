@@ -2,23 +2,15 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { AngularFireModule } from 'angularfire2';
-import firebase from 'firebase';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+//import { HomePage } from '../pages/home/home';
 import { AircraftPage } from '../pages/aircraft/aircraft';
 import { SurfaceCalcPage } from '../pages/surfacecalc/surfacecalc';
 import { BowCalcPage } from '../pages/bowcalc/bowcalc';
 import { LinksPage } from '../pages/links/links';
 import { FormsPage } from '../pages/forms/forms';
-import { MapPage } from '../pages/map/map';
-import { AfldInspPage } from '../pages/afldinsp/afldinsp';
-import { AircraftDetailsPage } from '../pages/aircraftdetails/aircraft-details';
-import { SignInPage } from '../pages/signin/signin';
-import { RegisterPage } from '../pages/register/register';
+//import { SignInPage } from '../pages/signin/signin';
 import { TabsPage } from '../pages/tabs/tabs';
-import { MarkersPage } from '../pages/markers/markers';
 import { RegulationsPage } from '../pages/regulations/regulations';
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -28,11 +20,23 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
-  public signin = false;
+  //rootPage: any = HomePage;
+  rootPage: any;
+  public signedin = false;
 
   constructor(private firebase: AngularFireAuth, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
+    const authObserver = firebase.authState.subscribe( user => {
+      if (user) {
+        this.rootPage = 'HomePage';
+        //authObserver.unsubscribe();
+        this.signedin = true;
+      } else {
+        this.rootPage = 'SignInPage';
+        //authObserver.unsubscribe();
+        this.signedin = false;
+      }
+    });
   }
 
   initializeApp() {
@@ -52,62 +56,56 @@ export class MyApp {
   }
 
   signIn(){
-    //this.signin = !this.signin;
-    if(this.signin){
-      //this.type = 'text';
+    if(!this.signedin){
       this.openSignInPage();
     } else {
-      //this.openSignInPage();
       this.firebase.auth.signOut();
-      this.signin = false;
-      this.openHomePage();
     }
   }
 
   openHomePage() {
-    this.nav.setRoot(HomePage);
+    this.nav.setRoot('HomePage');
   }
 
   openAircraftPage() {
-    this.nav.setRoot(AircraftPage);
+    this.nav.setRoot('AircraftPage');
   }
 
   openSurfCalcPage() {
-    this.nav.setRoot(SurfaceCalcPage);
+    this.nav.setRoot('SurfaceCalcPage');
   }
 
   openBowCalcPage() {
-    this.nav.setRoot(BowCalcPage);
+    this.nav.setRoot('BowCalcPage');
   }
 
   openLinksPage() {
-    this.nav.setRoot(LinksPage);
+    this.nav.setRoot('LinksPage');
   }
 
   openFormsPage() {
-    this.nav.setRoot(FormsPage);
+    this.nav.setRoot('FormsPage');
   }
 
   openMapPage() {
-    //this.nav.setRoot(MapPage);
-    this.nav.setRoot(TabsPage);
+    var objVC = this.nav.getActive();
+    if(objVC.component.name === 'TabsPage') {
+        console.log('on maps page already');
+    } else {
+      if(this.signedin){
+        this.nav.setRoot('TabsPage');
+      } else {
+        this.nav.setRoot('SignInPage');
+      }
+    }
   }
 
   openSignInPage() {
-    this.nav.setRoot(SignInPage);
+    this.nav.setRoot('SignInPage');
     //this.nav.push(SignInPage);
   }
 
   openRegulationsPage() {
-    this.nav.setRoot(RegulationsPage);
+    this.nav.setRoot('RegulationsPage');
   }
-
-  //doRefresh(refresher) {
-  //  console.log('Begin async operation', refresher);
-
-  //  setTimeout(() => {
-  //    console.log('Async operation has ended');
-  //    refresher.complete();
-  //  }, 2000);
-  //}
 }

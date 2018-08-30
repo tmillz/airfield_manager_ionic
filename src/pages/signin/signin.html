@@ -9,36 +9,36 @@
 
 <ion-content padding >
     <div class="center" style="max-width:400px">
-
+    <form [formGroup] ="loginForm" (submit)="loginUser()">
     <ion-list>
       <ion-card padding>
-        <h2 text-center>Sign in to get all your saved markers and customized forms</h2>
+        <h2 text-center>You must be logged in to use the map and forms features</h2>
       </ion-card>
       <ion-item>
         <ion-label floating>email</ion-label>
-        <ion-input type="text" [(ngModel)]="email"></ion-input>
+        <ion-input formControlName="email" type="email" [(ngModel)]="email"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating >password</ion-label>
-        <ion-input type={{type}} [(ngModel)]="password" name="password"></ion-input>
-        <!--ion-icon name="md-eye" item-right></ion-icon-->
+        <ion-input formControlName="password" type={{type}} [(ngModel)]="password" name="password"></ion-input>
         <button *ngIf="!showPass" ion-button icon-only clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="md-eye-off"></ion-icon></button>
         <button *ngIf="showPass" ion-button icon-only clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="md-eye"></ion-icon></button>
       </ion-item>
 
     </ion-list>
 
-      <button ion-button color="light" block (click)="registerUser()">Sign In</button>
-
+      <!--button ion-button color="light" block (click)="signInUser()">Sign In</button-->
+      <button ion-button color="light" block type="submit">Sign In</button>
+    </form>
       <button ion-button color="primary" block (click)="loginGUser()" icon-left><ion-icon name="logo-google"></ion-icon>Sign In With Google</button>
 
       <div text-center>
-          <button ion-button outline center [navPush]="registerPage">Register</button>
+          <button ion-button outline center (click)="openRegPage()">Register</button>
       </div>
 
       <div text-center>
-          <button ion-button outline center [navPush]="registerPage">Forgot Password?</button>
+          <button ion-button outline center [navPush]="resetPasswordPage">Forgot Password?</button>
       </div>
     </div>
 </ion-content>

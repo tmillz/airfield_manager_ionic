@@ -1,8 +1,9 @@
 import { Component, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { NavController, NavParams, Content } from 'ionic-angular';
-import { IonicPage } from 'ionic-angular/navigation/ionic-page';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { IonicPage } from 'ionic-angular';
 
-//@IonicPage()
+@IonicPage()
 
 @Component({
   selector: 'page-home',
@@ -25,7 +26,7 @@ export class HomePage {
 
   //homepage scrolling!!!!
   ionViewDidLoad() {
-      console.log('ionViewDidLoad HomePage');
+      //console.log('ionViewDidLoad HomePage');
 
       this.headerImgUrl = './assets/home.jpeg';
 

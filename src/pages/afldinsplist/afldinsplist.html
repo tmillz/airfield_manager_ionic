@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Airfield Inspections</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear (click)="downloadCsv()">
+        <ion-icon item-right name="md-cloud-download"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let inspection of inspections | async">
+      <ion-item>
+        Date: {{inspection.payload.val().date}} <ion-note item-right><h6>By:{{inspection.payload.val().inspector}}</h6></ion-note>
+      </ion-item>
+      <ion-item-options slide="left">
+        <button ion-button (click)="delete(inspection.key, $event)">Delete</button>
+      </ion-item-options>
+    </ion-item-sliding> 
+
+  </ion-list>
+
+</ion-content>

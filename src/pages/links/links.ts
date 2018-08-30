@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { IonicPage } from 'ionic-angular/navigation/ionic-page';
 
-//@IonicPage()
+@IonicPage()
 
 @Component({
   selector: 'page-links',

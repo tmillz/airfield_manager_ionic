@@ -79,7 +79,7 @@
     </platform>
     <platform name="browser">
         <hook src="scripts/appAfterBuild.js" type="after_build" />
-        <version name="AppVersion" value="7" />
+        <version name="AppVersion" value="25" />
     </platform>
     <allow-navigation href="http://192.168.1.2:8100" />
     <allow-navigation href="https://*/*" />
@@ -92,5 +92,6 @@
     <plugin name="cordova-plugin-statusbar" spec="^2.2.2" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.1" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
-    <engine name="browser" spec="~4.1.0" />
+    <plugin name="cordova-plugin-camera" spec="~4.0.1" />
+    <engine name="browser" spec="5.0.3" />
 </widget>
